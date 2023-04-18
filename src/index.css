@@ -27,3 +27,11 @@ code {
 .action-icons:hover{
   cursor:pointer;
 }
+.Left-block{
+  height:110px;
+  Width:110px;
+  
+  border-radius: 1%;
+  /* border-color: black; */
+  /* background-color:aqua ; */
+}
