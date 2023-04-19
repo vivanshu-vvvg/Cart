@@ -2,16 +2,7 @@ import React from 'react'
 import  './index.css'
 // const Cart_item = () => {
   class Cart_item extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      price:999,  
-      title:"Mobile Phone",
-      Qty:0,
-      img:''
-    }
-
-  }
+ 
   increaseQuantity = ()=>{
     // this.state.Qty +=1;
     // this.setState({
@@ -31,16 +22,16 @@ import  './index.css'
 
 
   render(){
-    const{price,title,Qty}=this.state;
+    const{price,title,Qty}=this.props.products;
   return (
     <div className='Cart-item'>
-      <div className='Left-block'>
+      <div className='Left-block'style={{backgroundColor:'grey'}}>
         <img />
       </div>
       <div className='right-block'>
         <div style={{fontSize:25}}>{title}</div>
-        <div style={{color:'#777'}}>{price}</div>
-        <div style={{color:'#777'}}>{Qty}</div>
+        <div style={{color:'#777'}}>Rs {price}</div>
+        <div style={{color:'#777'}}>Qty: {Qty}</div>
         <div className='cart-item-actions'>
         {/*buttons*/}
         <img  alt='Increase' className='action-icons' src=''
