@@ -7,10 +7,30 @@ import  './index.css'
     this.state={
       price:999,  
       title:"Mobile Phone",
-      Qty:1,
+      Qty:0,
       img:''
     }
-  }render(){
+
+  }
+  increaseQuantity = ()=>{
+    // this.state.Qty +=1;
+    // this.setState({
+    //   Qty : this.state.Qty +1
+    // });
+    this.setState((prevState)=> {
+      return{Qty: prevState.Qty +1}
+    });
+    console.log('this.state');
+  }
+  decreaseQuantity =()=>{
+    this.setState((prevState)=>{if(prevState.Qty>0){
+      return{Qty: prevState.Qty-1}}
+    });
+  }
+
+
+
+  render(){
     const{price,title,Qty}=this.state;
   return (
     <div className='Cart-item'>
@@ -23,8 +43,10 @@ import  './index.css'
         <div style={{color:'#777'}}>{Qty}</div>
         <div className='cart-item-actions'>
         {/*buttons*/}
-        <img  alt='Increase' className='action-icons' src='https://icons8.com/icon/59864/plus'/>
-        <img alt='Decrease' className='action-icons' src=''/>
+        <img  alt='Increase' className='action-icons' src=''
+          onClick={this.increaseQuantity}/>
+        <img alt='Decrease' className='action-icons' src=''
+        onClick={this.decreaseQuantity}/>
         <img alt='Delete' className='action-icons' src=''/>
         </div>
       </div>
