@@ -7,7 +7,7 @@ class Cart extends React.Component{
     constructor(){
         super();
         this.state={
-          products:[
+          productsAll:[
             {
                 price:1999,  
                 title:"Watch",
@@ -28,20 +28,45 @@ class Cart extends React.Component{
                 Qty:0,
                 img:'',
                 id:3
+            },
+            {
+                price:2799,  
+                title:"Charger",
+                Qty:0,
+                img:'',
+                id:4
             }
           ]
         }
     
       }
+      handleIncreaseQuantity = (products)=>{
+        const {productsAll}= this.state;
+        const index = productsAll.indexOf(products);
+
+        productsAll[index].Qty +=1;
+        this.setState({productsAll})
+      }
+      handleDecreaseQuantity=(products)=>{
+        const {productsAll}=this.state;
+        const index = productsAll.indexOf(products);
+
+        if(productsAll[index].Qty>0){
+            productsAll[index].Qty -=1;
+            this.setState({productsAll})
+        }
+      }
     render(){
-       const {products} = this.state;
+       const {productsAll} = this.state;
         return(
             <div className='Cart'>
-                {products.map((products)=>{
+                {productsAll.map((products)=>{
                     return (
                         <Cart_item 
                         products={products} 
-                        key={products.id}/>
+                        key={products.id}
+                        onIncreaseQuantity={this.handleIncreaseQuantity}
+                        onDecreaseQuantity={this.handleDecreaseQuantity}/>
                         )
                 })}
                 

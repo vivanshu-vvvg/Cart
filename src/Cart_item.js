@@ -3,21 +3,21 @@ import  './index.css'
 // const Cart_item = () => {
   class Cart_item extends React.Component{
  
-  increaseQuantity = ()=>{
-    // this.state.Qty +=1;
-    // this.setState({
-    //   Qty : this.state.Qty +1
-    // });
-    this.setState((prevState)=> {
-      return{Qty: prevState.Qty +1}
-    });
-    console.log('this.state');
-  }
-  decreaseQuantity =()=>{
-    this.setState((prevState)=>{if(prevState.Qty>0){
-      return{Qty: prevState.Qty-1}}
-    });
-  }
+  // increaseQuantity = ()=>{
+  //   // this.state.Qty +=1;
+  //   // this.setState({
+  //   //   Qty : this.state.Qty +1
+  //   // });
+  //   this.setState((prevState)=> {
+  //     return{Qty: prevState.Qty +1}
+  //   });
+  //   console.log('this.state');
+  // }
+  // decreaseQuantity =()=>{
+  //   this.setState((prevState)=>{if(prevState.Qty>0){
+  //     return{Qty: prevState.Qty-1}}
+  //   });
+  // }
 
 
 
@@ -35,9 +35,9 @@ import  './index.css'
         <div className='cart-item-actions'>
         {/*buttons*/}
         <img  alt='Increase' className='action-icons' src=''
-          onClick={this.increaseQuantity}/>
+          onClick={()=> this.props.onIncreaseQuantity(this.props.products)}/>
         <img alt='Decrease' className='action-icons' src=''
-        onClick={this.decreaseQuantity}/>
+          onClick={()=> this.props.onDecreaseQuantity(this.props.products)}/>
         <img alt='Delete' className='action-icons' src=''/>
         </div>
       </div>
