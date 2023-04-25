@@ -37,6 +37,7 @@ code {
   border-radius: 1;
   margin: 2%;
   margin-top: -0.7%;
+  border-radius : 50%;
   /* border-color: black; */
   /* background-color:aqua ; */
 }
