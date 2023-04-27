@@ -6,24 +6,27 @@ const Cart_item = (props) => {
   const{price,title,Qty}=props.products;
   return (
     <div className='Cart-item'>
+
       <div className='Left-block'>
         <img className='Left-block' src={props.products.img} alt=''/>
       </div>
+
       <div className='right-block'>
         <div style={{fontSize:25}}>{title}</div>
         <div style={{color:'#777'}}>Rs {price}</div>
         <div style={{color:'#777'}}>Qty: {Qty}</div>
         <div className='cart-item-actions'>
-        {/*buttons*/}
-        <img  alt='Increase' className='action-icons' src=''
-          onClick={()=> props.onIncreaseQuantity(props.products)}/>
-        <img alt='Decrease' className='action-icons' src=''
-          onClick={()=> props.onDecreaseQuantity(props.products)}/>
-        <img alt='Delete' className='action-icons' src=''
-        onClick={()=> props.onDeleteProduct(props.products.id)}/>
+          {/*buttons*/}
+
+          <img  alt='Increase' className='action-icons' src=''
+            onClick={()=> props.onIncreaseQuantity(props.products)}/>
+          <img alt='Decrease' className='action-icons' src=''
+            onClick={()=> props.onDecreaseQuantity(props.products)}/>
+          <img alt='Delete' className='action-icons' src=''
+          onClick={()=> props.onDeleteProduct(props.products.id)}/>
+
         </div>
       </div>
-  
     </div>
   )
   }
